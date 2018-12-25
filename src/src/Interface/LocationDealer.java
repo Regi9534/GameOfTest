@@ -4,5 +4,5 @@ public interface LocationDealer {
 
     ArrayList<Location> getLocations ();
 
-    void setLocation(Location location);
+    void addLocationToLocationList(Location location);
 }
