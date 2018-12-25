@@ -40,5 +40,5 @@ public class Location implements src.Interface.Location {
         this.name = name;
         this.game = game;
         neighborMap = new HashMap<String, Location>();
-    }
+    };
 }
