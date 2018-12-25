@@ -4,6 +4,6 @@ public interface Player {
 
     public Location getLocation();
 
-    public void goInDirection(String Direction);
+    public void goInDirection(String direction);
 
 }
