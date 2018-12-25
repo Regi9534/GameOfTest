@@ -1,9 +1,9 @@
-package Interface;
+package src.Interface;
 
 public interface ConsoleEnviroment {
 
-    public String printOut(String returnString);
+    String printOut(String returnString);
 
-    public void intputString();
+    void intputString();
 
 }
