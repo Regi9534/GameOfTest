@@ -1,11 +1,14 @@
-public class ConsoleEnviroment {
+public class ConsoleEnviroment implements Interface.ConsoleEnviroment {
 
-    public String printOut(String OutputString){
-        return OutputString;
+
+    @Override
+    public String printOut(String returnString) {
+        return returnString;
+
     }
 
-    public void intputString(){
+    @Override
+    public void intputString() {
 
     }
-
 }
