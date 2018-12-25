@@ -1,10 +1,10 @@
 package src;
 
 public class Game {
-    LocationDealer locationDaealer;
+    LocationDealer locationDealer;
 
     public Game (){
-        this.locationDaealer = new LocationDealer();
+        this.locationDealer = new LocationDealer();
 
     }
 
