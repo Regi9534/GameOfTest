@@ -1,4 +1,6 @@
-public class ConsoleEnviroment implements Interface.ConsoleEnviroment {
+package src;
+
+public class ConsoleEnviroment implements src.Interface.ConsoleEnviroment {
 
 
     @Override
