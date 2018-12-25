@@ -1,4 +1,4 @@
-package interface;
+package src.Interface;
 
 public interface Location {
 
