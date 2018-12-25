@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class ConsoleEnviroment implements src.Interface.ConsoleEnviroment {
     Scanner scanner = new Scanner(System.in);
-
     Game game = new Game();
     InputDealer inputDealer = new InputDealer(game);
 
