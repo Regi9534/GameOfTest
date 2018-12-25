@@ -1,7 +1,7 @@
-package src.Interface;
+package src;
 
 public class Game {
-
+    LocationDealer locationDaealer;
 
     public Game (){
 
