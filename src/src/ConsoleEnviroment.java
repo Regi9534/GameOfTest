@@ -4,12 +4,24 @@ import java.util.Scanner;
 
 public class ConsoleEnviroment implements src.Interface.ConsoleEnviroment {
     Scanner scanner = new Scanner(System.in);
-    Game game = new Game();
-    InputDealer inputDealer = new InputDealer(game);
+    Game game;
+    InputDealer inputDealer;
+
+    public ConsoleEnviroment(Boolean generateNewGame) {
+        if (generateNewGame) {
+            this.game = new Game();
+             this.inputDealer = new InputDealer(game);
+        }
+
+    }
+
+    public ConsoleEnviroment() {
+
+    }
 
     @Override
-    public String printOut(String returnString) {
-        return returnString;
+    public void printOut(String returnString) {
+        System.out.println(returnString);
     }
 
     @Override

@@ -3,7 +3,7 @@ package src;
 public class main {
 
     public static void main(String[] args) {
-        ConsoleEnviroment consoleEnviroment = new ConsoleEnviroment();
+        ConsoleEnviroment consoleEnviroment = new ConsoleEnviroment(true);
 
         int a =0;
         if(a==0){
