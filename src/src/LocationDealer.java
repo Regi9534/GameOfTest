@@ -36,7 +36,7 @@ public class LocationDealer implements src.Interface.LocationDealer {
         Location house = new src.Location( "house" ,game);
     }
     public void setNeighbors(){
-      //  getLocationByName("garden").setNeighborLocation("norden", getLocationByName("house"));
+        getLocationByName("garden").setNeighborLocation("norden", getLocationByName("house"));
 
     }
 }

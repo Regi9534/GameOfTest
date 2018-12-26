@@ -23,9 +23,9 @@ public class Player implements src.Interface.Player {
     @Override
     public void goInDirection(String direction) {
         if(this.position.getNeighborLocation(direction)!= null){
-            consoleEnviroment.printOut("You stay at: " + this.position + "\n");
+            consoleEnviroment.printOut("You stay at: " + this.position.getName() + "\n");
             this.position = this.position.getNeighborLocation(direction);
-            consoleEnviroment.printOut("U move to " +direction + " and now u stay at: " + this.position);
+            consoleEnviroment.printOut("U move to " +direction + " and now u stay at: " + this.position.getName());
         }
     }
 }

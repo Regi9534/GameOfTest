@@ -24,11 +24,17 @@ public class InputDealer {
     public void findAndTriggerCommand(String[] parts) {
         if (parts.length >= 1) {
             switch (Commands.valueOf(parts[0].toUpperCase())) {
+                case MOVE:
+                    if(parts.length>=2){
+                    game.getPlayer().goInDirection(parts[1]);}
+                    else {
+                        consoleEnviroment.printOut("Missing direction");
+                    }
+                    break;
                 case HELP:
                     game.getCommand().printCommands();
                     break;
-                default:
-                    consoleEnviroment.printOut("Command not implemented");
+                default: consoleEnviroment.printOut("Command not implemented");
             }
         } else {
             consoleEnviroment.printOut("Check input");
