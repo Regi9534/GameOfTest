@@ -30,9 +30,9 @@ public class InputDealer {
                 default:
                     consoleEnviroment.printOut("Command not implemented");
             }
+        } else {
+            consoleEnviroment.printOut("Check input");
         }
-        consoleEnviroment.printOut("Check input");
-
     }
 
 }
