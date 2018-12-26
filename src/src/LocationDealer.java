@@ -5,14 +5,17 @@ import src.Interface.Location;
 import java.util.ArrayList;
 
 public class LocationDealer implements src.Interface.LocationDealer {
-    ArrayList<Location> locationsList = new ArrayList<>();
+    ArrayList<Location> locationsList;
     Game game;
     public LocationDealer(Game game) {
         this.game =game;
+        locationsList = new ArrayList<>();
+    }
+
+    public void buildLocations(){
         createLocations();
         setNeighbors();
     }
-
     @Override
     public ArrayList<Location> getLocations() {
         return locationsList;

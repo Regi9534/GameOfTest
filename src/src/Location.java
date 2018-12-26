@@ -3,19 +3,18 @@ package src;
 import java.util.HashMap;
 
 public class Location implements src.Interface.Location {
-
-    public Location(String name, Game game) {
-        this.name = name;
-        this.game = game;
-        neighborMap = new HashMap<String, Location>();
-        game.getLocationDealer().addLocationToLocationList(this);
-    }
-
     private Game game;
 
     private String name;
 
     private HashMap<String, Location> neighborMap;
+
+    public Location(String name, Game game) {
+        this.name = name;
+        this.game = game;
+        neighborMap = new HashMap<String, Location>();
+        game.locationDealer.addLocationToLocationList(this);
+    }
 
     public Game getGame() {
         return game;

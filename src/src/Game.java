@@ -5,22 +5,23 @@ public class Game {
     Player player;
     Command command;
 
-    public Game (){
+    public Game() {
         this.locationDealer = new LocationDealer(this);
-        this.player = new Player(this ,locationDealer.getLocations().get(0));
+        getLocationDealer().buildLocations();
+        this.player = new Player(this, locationDealer.getLocations().get(0));
         this.command = new Command();
     }
 
 
-    public LocationDealer getLocationDealer(){
+    public LocationDealer getLocationDealer() {
         return this.locationDealer;
     }
 
-    public Player getPlayer (){
+    public Player getPlayer() {
         return this.player;
     }
 
-    public Command getCommand (){
+    public Command getCommand() {
         return this.command;
     }
 }
