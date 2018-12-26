@@ -6,4 +6,5 @@ public interface Location {
 
     public void setNeighborLocation(String direction, Location location);
 
+     String getName();
 }

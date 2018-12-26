@@ -7,4 +7,6 @@ public interface LocationDealer {
     ArrayList<Location> getLocations ();
 
     void addLocationToLocationList(Location location);
+
+    Location getLocationByName(String locationName);
 }

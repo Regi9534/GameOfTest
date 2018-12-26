@@ -21,7 +21,6 @@ public class ConsoleEnviroment implements src.Interface.ConsoleEnviroment {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
             final String result = scanner.nextLine();
             if (result != null) {
                 inputDealer.handleInput(result);

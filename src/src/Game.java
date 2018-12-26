@@ -6,7 +6,7 @@ public class Game {
     Command command;
 
     public Game (){
-        this.locationDealer = new LocationDealer();
+        this.locationDealer = new LocationDealer(this);
         this.player = new Player(this ,locationDealer.getLocations().get(0));
         this.command = new Command();
     }
