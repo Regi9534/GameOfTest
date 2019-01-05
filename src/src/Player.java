@@ -3,6 +3,7 @@ package src;
 import src.Interface.Location;
 
 import java.util.HashMap;
+import java.util.List;
 
 
 public class Player implements src.Interface.Player {
@@ -23,15 +24,17 @@ public class Player implements src.Interface.Player {
         return this.position;
     }
 
-    public void lookArround(){
+    public void lookAround(){
         String returnString = "";
         HashMap allNeighbor = position.getNeighborMap();
         for ( Object direction: allNeighbor.keySet()) {
                 src.Location value = (src.Location) allNeighbor.get(direction);
-
-                //TODO
-                // BOenke überarbeite den scheiß bitte. :)
-                returnString += direction  + " " + value.getName();
+                returnString += "in the " + direction  + " you see a " + value.getName() + "\n";
+        }
+        List<Item> locationInventoryContent = position.getInventory().getContent();
+        returnString+="Around you you see:\n";
+        for(int index=0; index<locationInventoryContent.size(); index++) {
+            returnString+=locationInventoryContent.get(index).getName() + "\n";
         }
         consoleEnviroment.printOut(returnString);
     }
