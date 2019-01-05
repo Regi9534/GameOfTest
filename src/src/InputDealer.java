@@ -33,6 +33,9 @@ public class InputDealer {
                         consoleEnviroment.printOut("Missing direction");
                     }
                     break;
+                case AT:
+                    consoleEnviroment.printOut("you are at: " + game.getPlayer().getLocation().getName() + "\n");
+                    break;
                 case HELP:
                     game.getCommand().printCommands();
                     break;

@@ -1,8 +1,9 @@
 package src.Enums;
 
 public enum Commands {
-    MOVE("<move> <direction> u can move to a neibor of the current location"),
-    HELP("Give all existens Caommands back");
+    MOVE("<move> <direction> you can move to a neighbor of the current location"),
+    AT("Gives the player's current location"),
+    HELP("Give all existent Commands back");
 
 
     private String desc;
