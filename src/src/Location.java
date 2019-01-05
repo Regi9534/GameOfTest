@@ -23,6 +23,9 @@ public class Location implements src.Interface.Location {
     public String getName() {
         return name;
     }
+    public HashMap getNeighborMap(){
+        return this.neighborMap;
+    }
 
     public Location getNeighborLocation(String d) {
         String direction=d.toUpperCase();
