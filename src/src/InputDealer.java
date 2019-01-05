@@ -2,6 +2,8 @@ package src;
 
 import src.Enums.Commands;
 
+import java.util.Arrays;
+
 public class InputDealer {
     ConsoleEnviroment consoleEnviroment = new ConsoleEnviroment();
     Game game;
@@ -22,19 +24,20 @@ public class InputDealer {
     }
 
     public void findAndTriggerCommand(String[] parts) {
-        if (parts.length >= 1) {
+        if (parts.length >= 1 && Arrays.stream(Commands.values()).anyMatch(s->s.toString().equals(parts[0].toUpperCase()))) {
             switch (Commands.valueOf(parts[0].toUpperCase())) {
                 case MOVE:
-                    if(parts.length>=2){
-                    game.getPlayer().goInDirection(parts[1]);}
-                    else {
+                    if (parts.length >= 2) {
+                        game.getPlayer().goInDirection(parts[1]);
+                    } else {
                         consoleEnviroment.printOut("Missing direction");
                     }
                     break;
                 case HELP:
                     game.getCommand().printCommands();
                     break;
-                default: consoleEnviroment.printOut("Command not implemented");
+                default:
+                    consoleEnviroment.printOut("Command not implemented");
             }
         } else {
             consoleEnviroment.printOut("Check input");
