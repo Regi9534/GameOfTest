@@ -24,7 +24,8 @@ public class Location implements src.Interface.Location {
         return name;
     }
 
-    public Location getNeighborLocation(String direction) {
+    public Location getNeighborLocation(String d) {
+        String direction=d.toUpperCase();
         if (neighborMap.containsKey(direction)) {
             return neighborMap.get(direction);
         } else {
@@ -39,7 +40,7 @@ public class Location implements src.Interface.Location {
 
 
     public void setNeighborLocation(String direction, src.Interface.Location location) {
-        neighborMap.put(direction, (Location) location);
+        neighborMap.put(direction.toUpperCase(), (Location) location);
     }
 
 }
