@@ -13,9 +13,6 @@ public class Item {
         new Item(name, "");
     }
 
-    public Item() {
-        new Item("", "");
-    }
     public String getDescription() {
         return description;
     }
