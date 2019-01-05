@@ -14,7 +14,7 @@ public class Player implements src.Interface.Player {
     public Player(Game game, Location startingLocation){
         this.game = game;
         this.position = (src.Location) startingLocation;
-        this.inventory = new Inventory(game);
+        this.inventory = new Inventory(game, "");
     }
 
 
@@ -30,7 +30,7 @@ public class Player implements src.Interface.Player {
                 src.Location value = (src.Location) allNeighbor.get(direction);
 
                 //TODO
-                // BOenke überarbeite den scheiß bitte. :)
+                // Boenke überarbeite den scheiß bitte. :)
                 returnString += direction  + " " + value.getName();
         }
         consoleEnviroment.printOut(returnString);
