@@ -4,16 +4,16 @@ import java.util.HashMap;
 
 public class Location implements src.Interface.Location {
     private Game game;
-
     private String name;
-
     private HashMap<String, Location> neighborMap;
+    Inventory inventory;
 
     public Location(String name, Game game) {
         this.name = name;
         this.game = game;
         neighborMap = new HashMap<String, Location>();
         game.locationDealer.addLocationToLocationList(this);
+        this.inventory = new Inventory(game);
     }
 
     public Game getGame() {

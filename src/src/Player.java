@@ -8,10 +8,12 @@ public class Player implements src.Interface.Player {
     ConsoleEnviroment consoleEnviroment = new ConsoleEnviroment();
     Game game;
     Location position;
+    Inventory inventory;
 
     public Player(Game game, Location startingLocation){
         this.game = game;
         this.position = startingLocation;
+        this.inventory = new Inventory(game);
     }
 
 
