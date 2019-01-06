@@ -39,6 +39,9 @@ public class InputDealer {
                 case LOOK:
                     game.getPlayer().lookAround();
                     break;
+                case INVENTORY:
+                    game.getPlayer().listInventory();
+                    break;
                 case HELP:
                     game.getCommand().printCommands();
                     break;

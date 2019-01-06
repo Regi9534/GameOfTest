@@ -48,7 +48,7 @@ public class Player implements src.Interface.Player {
         }
     }
     public void listInventory(){
-        String returnString = "In have following items in your inventory";
+        String returnString = "You have following items in your inventory";
         int counter = 1;
         for (Item item: this.inventory.getContent()
              ) {
