@@ -37,7 +37,7 @@ public class InputDealer {
                     consoleEnviroment.printOut("you are at: " + game.getPlayer().getLocation().getName() + "\n");
                     break;
                 case LOOK:
-                    game.getPlayer().lookArround();
+                    game.getPlayer().lookAround();
                     break;
                 case HELP:
                     game.getCommand().printCommands();

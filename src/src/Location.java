@@ -37,6 +37,9 @@ public class Location implements src.Interface.Location {
         }
     }
 
+    public Inventory getInventory() {
+        return inventory;
+    }
     public void setName(String name) {
         this.name = name;
     }

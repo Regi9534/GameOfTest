@@ -14,7 +14,7 @@ public class Player implements src.Interface.Player {
     public Player(Game game, Location startingLocation){
         this.game = game;
         this.position = (src.Location) startingLocation;
-        this.inventory = new Inventory(game, "PlayerInvetory");
+        this.inventory = new Inventory(game);
     }
 
 
@@ -23,14 +23,17 @@ public class Player implements src.Interface.Player {
         return this.position;
     }
 
-    public void lookArround(){
+    public void lookAround(){
         String returnString = "";
         HashMap allNeighbor = position.getNeighborMap();
         for ( Object direction: allNeighbor.keySet()) {
                 src.Location value = (src.Location) allNeighbor.get(direction);
-                //TODO
-                // Boenke überarbeite den scheiß bitte. :)
-                returnString += direction  + " " + value.getName();
+                returnString += "in the " + direction  + " you see a " + value.getName() + "\n";
+        }
+        List<Item> locationInventoryContent = position.getInventory().getContent();
+        returnString+="Around you you see:\n";
+        for(int index=0; index<locationInventoryContent.size(); index++) {
+            returnString+=locationInventoryContent.get(index).getName() + "\n";
         }
         consoleEnviroment.printOut(returnString);
     }
