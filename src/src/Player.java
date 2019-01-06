@@ -3,6 +3,7 @@ package src;
 import src.Interface.Location;
 
 import java.util.HashMap;
+import java.util.List;
 
 
 public class Player implements src.Interface.Player {
@@ -14,7 +15,7 @@ public class Player implements src.Interface.Player {
     public Player(Game game, Location startingLocation){
         this.game = game;
         this.position = (src.Location) startingLocation;
-        this.inventory = new Inventory(game);
+        this.inventory = new Inventory(game ,"PlayerInvetory");
     }
 
 
