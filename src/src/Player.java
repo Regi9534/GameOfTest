@@ -32,7 +32,7 @@ public class Player implements src.Interface.Player {
                 returnString += "in the " + direction  + " you see a " + value.getName() + "\n";
         }
         List<Item> locationInventoryContent = position.getInventory().getContent();
-        returnString+="Around you you see:\n";
+        returnString+="Around you see:\n";
         for(int index=0; index<locationInventoryContent.size(); index++) {
             returnString+=locationInventoryContent.get(index).getName() + "\n";
         }
