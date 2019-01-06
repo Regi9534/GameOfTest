@@ -14,7 +14,7 @@ public class Player implements src.Interface.Player {
     public Player(Game game, Location startingLocation){
         this.game = game;
         this.position = (src.Location) startingLocation;
-        this.inventory = new Inventory(game, "");
+        this.inventory = new Inventory(game, "PlayerInvetory");
     }
 
 
@@ -28,7 +28,6 @@ public class Player implements src.Interface.Player {
         HashMap allNeighbor = position.getNeighborMap();
         for ( Object direction: allNeighbor.keySet()) {
                 src.Location value = (src.Location) allNeighbor.get(direction);
-
                 //TODO
                 // Boenke überarbeite den scheiß bitte. :)
                 returnString += direction  + " " + value.getName();
@@ -43,5 +42,14 @@ public class Player implements src.Interface.Player {
             this.position = this.position.getNeighborLocation(direction);
             consoleEnviroment.printOut("U move to " +direction + " and now u stay at: " + this.position.getName());
         }
+    }
+    public void listInventory(){
+        String returnString = "In have following items in your inventory";
+        int counter = 1;
+        for (Item item: this.inventory.getContent()
+             ) {
+            returnString += counter +". " + item.getName() + " : " + item.getDescription();
+        }
+        consoleEnviroment.printOut(returnString);
     }
 }

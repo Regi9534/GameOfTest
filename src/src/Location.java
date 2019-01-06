@@ -13,7 +13,7 @@ public class Location implements src.Interface.Location {
         this.game = game;
         neighborMap = new HashMap<String, Location>();
         game.locationDealer.addLocationToLocationList(this);
-        this.inventory = new Inventory(game);
+        this.inventory = new Inventory(game, "LocationInvetory");
     }
 
     public Game getGame() {
