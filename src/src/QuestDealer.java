@@ -1,5 +1,6 @@
 package src;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -10,10 +11,11 @@ public class QuestDealer {
 
     public QuestDealer(Game game) {
         this.game = game;
+        generateQuests();
     }
 
     public void generateQuests() {
-        getQuestList().put("You are retarded", "Yes");
+        getQuestList().put("You are retarded?", "Yes");
     }
 
     public String getAnswerFromQuestString(String quest) {
@@ -27,7 +29,7 @@ public class QuestDealer {
      * @return The new generated Question
      */
     public String findNewQuest() {
-        int i = (int) (Math.random() * getQuestList().size() + 1);
+        int i = (int) (Math.random() * getQuestList().size()-1);
 
         return getQuestByIndex(i);
     }
@@ -36,14 +38,15 @@ public class QuestDealer {
      * Return nothing and setinstand a newQuestion
      */
     public void findAndSetNewQuest() {
-        int i = (int) (Math.random() * getQuestList().size() + 1);
+        int i = (int) (Math.random() * getQuestList().size()-1);
 
         setCurrentQuest(getQuestByIndex(i));
     }
 
     public String getQuestByIndex(int i) {
-        List<String> Questions = (List<String>) questList.keySet();
-        String QuestionByIndex = Questions.get(i);
+        List<String> questions = new ArrayList<>();
+        questions.addAll(questList.keySet());
+        String QuestionByIndex = questions.get(i);
         return QuestionByIndex;
     }
 
@@ -64,6 +67,9 @@ public class QuestDealer {
     }
 
     public String resolveQuest(String answer) {
+        if(getCurrentQuest() == null){
+            return "Request a new quest";
+        }
         if (getAnswerFromQuestString(getCurrentQuest()).equalsIgnoreCase(answer)) {
             return "The answer is correct";
         } else return "The answer is wrong";

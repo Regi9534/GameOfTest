@@ -43,15 +43,14 @@ public class InputDealer {
                     game.getPlayer().listInventory();
                     break;
                 case QUEST:
-                    game.getQuestDealer().questRequest();
+                    consoleEnviroment.printOut(game.getQuestDealer().questRequest());
                     break;
-                case Answer:
+                case ANSWER:
                     if (parts.length >= 2) {
-                        game.getQuestDealer().resolveQuest(parts[1]);
+                        consoleEnviroment.printOut(game.getQuestDealer().resolveQuest(parts[1]));
                     } else {
                         consoleEnviroment.printOut("Missing answer");
                     }
-
                     break;
                 case HELP:
                     game.getCommand().printCommands();

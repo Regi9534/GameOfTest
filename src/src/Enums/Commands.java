@@ -6,7 +6,7 @@ public enum Commands {
     LOOK("<look> Shows all possible directions and items in location"),
     INVENTORY("<inventory> List all items in your invetory"),
     QUEST("Give u a next quest, with the right answer u will get an item"),
-    Answer("<answer> <yes or no> let u give an answer to the current quest"),
+    ANSWER("<answer> <yes or no> let u give an answer to the current quest"),
     HELP("<help> Give all existent Commands back");
 
     private String desc;
