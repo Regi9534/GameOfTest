@@ -45,6 +45,14 @@ public class InputDealer {
                 case QUEST:
                     game.getQuestDealer().questRequest();
                     break;
+                case Answer:
+                    if (parts.length >= 2) {
+                        game.getQuestDealer().resolveQuest(parts[1]);
+                    } else {
+                        consoleEnviroment.printOut("Missing answer");
+                    }
+
+                    break;
                 case HELP:
                     game.getCommand().printCommands();
                     break;

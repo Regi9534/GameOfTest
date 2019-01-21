@@ -12,6 +12,10 @@ public class QuestDealer {
         this.game = game;
     }
 
+    public void generateQuests() {
+        getQuestList().put("You are retarded", "Yes");
+    }
+
     public String getAnswerFromQuestString(String quest) {
         if (questList.containsKey(quest)) {
             String currentAnswer = questList.get(quest);
@@ -57,6 +61,12 @@ public class QuestDealer {
 
     public HashMap<String, String> getQuestList() {
         return this.questList;
+    }
+
+    public String resolveQuest(String answer) {
+        if (getAnswerFromQuestString(getCurrentQuest()).equalsIgnoreCase(answer)) {
+            return "The answer is correct";
+        } else return "The answer is wrong";
     }
 
     public String questRequest() {
