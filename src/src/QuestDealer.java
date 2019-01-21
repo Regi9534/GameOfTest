@@ -29,19 +29,27 @@ public class QuestDealer {
      * @return The new generated Question
      */
     public String findNewQuest() {
-        int i = (int) (Math.random() * getQuestList().size()-1);
-
-        return getQuestByIndex(i);
+        int i = (int) (Math.random() * getQuestList().size() - 1);
+        if (i >= 0) {
+            return getQuestByIndex(i);
+        } else setCurrentQuest("No current quest");
+        return "No current quest";
     }
 
     /**
      * Return nothing and setinstand a newQuestion
      */
     public void findAndSetNewQuest() {
-        int i = (int) (Math.random() * getQuestList().size()-1);
+        int i = (int) (Math.random() * getQuestList().size() - 1);
+        if (i >= 0) {
+            setCurrentQuest("No current quest");
+            setCurrentQuest(getQuestByIndex(i));
+        } else {
 
-        setCurrentQuest(getQuestByIndex(i));
+            setCurrentQuest("No current quest");
+        }
     }
+
 
     public String getQuestByIndex(int i) {
         List<String> questions = new ArrayList<>();
@@ -67,12 +75,18 @@ public class QuestDealer {
     }
 
     public String resolveQuest(String answer) {
-        if(getCurrentQuest() == null){
+        if (getCurrentQuest() == null) {
             return "Request a new quest";
         }
         if (getAnswerFromQuestString(getCurrentQuest()).equalsIgnoreCase(answer)) {
+            removeCurrentQuestFromQuestList();
+            findAndSetNewQuest();
             return "The answer is correct";
-        } else return "The answer is wrong";
+
+        } else
+            removeCurrentQuestFromQuestList();
+        findAndSetNewQuest();
+        return "The answer is wrong";
     }
 
     public String questRequest() {
