@@ -24,7 +24,7 @@ public class InputDealer {
     }
 
     public void findAndTriggerCommand(String[] parts) {
-        if (parts.length >= 1 && Arrays.stream(Commands.values()).anyMatch(s->s.toString().equals(parts[0].toUpperCase()))) {
+        if (parts.length >= 1 && Arrays.stream(Commands.values()).anyMatch(s -> s.toString().equals(parts[0].toUpperCase()))) {
             switch (Commands.valueOf(parts[0].toUpperCase())) {
                 case MOVE:
                     if (parts.length >= 2) {
@@ -43,7 +43,7 @@ public class InputDealer {
                     game.getPlayer().listInventory();
                     break;
                 case QUEST:
-
+                    game.getQuestDealer().questRequest();
                     break;
                 case HELP:
                     game.getCommand().printCommands();

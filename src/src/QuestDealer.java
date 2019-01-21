@@ -5,7 +5,12 @@ import java.util.List;
 
 public class QuestDealer {
     private HashMap<String, String> questList = new HashMap<>();
-    private String currentQuest = "";
+    private String currentQuest = null;
+    private Game game;
+
+    public QuestDealer(Game game) {
+        this.game = game;
+    }
 
     public String getAnswerFromQuestString(String quest) {
         if (questList.containsKey(quest)) {
@@ -17,8 +22,8 @@ public class QuestDealer {
     /**
      * @return The new generated Question
      */
-    public String findNewQuest(){
-        int i = (int) (Math.random() * getQuestList().size()+1);
+    public String findNewQuest() {
+        int i = (int) (Math.random() * getQuestList().size() + 1);
 
         return getQuestByIndex(i);
     }
@@ -26,32 +31,43 @@ public class QuestDealer {
     /**
      * Return nothing and setinstand a newQuestion
      */
-    public void findAndSetNewQuest(){
-        int i = (int) (Math.random() * getQuestList().size()+1);
+    public void findAndSetNewQuest() {
+        int i = (int) (Math.random() * getQuestList().size() + 1);
 
         setCurrentQuest(getQuestByIndex(i));
     }
 
-    public String getQuestByIndex(int i){
+    public String getQuestByIndex(int i) {
         List<String> Questions = (List<String>) questList.keySet();
-        String QuestionByIndex =Questions.get(i);
+        String QuestionByIndex = Questions.get(i);
         return QuestionByIndex;
     }
 
-    public void setCurrentQuest(String newQuest){
+    public void setCurrentQuest(String newQuest) {
         this.currentQuest = newQuest;
     }
 
-    public String getCurrentQuest(){
+    public String getCurrentQuest() {
         return this.currentQuest;
     }
-    public void removeCurrentQuestFromQuestList(){
+
+    public void removeCurrentQuestFromQuestList() {
         questList.remove(getCurrentQuest());
     }
 
-    public HashMap<String, String> getQuestList(){
+    public HashMap<String, String> getQuestList() {
         return this.questList;
     }
+
+    public String questRequest() {
+        if (getCurrentQuest() == null) {
+            findAndSetNewQuest();
+            return "You have no quest but u got one: " + getCurrentQuest();
+        } else {
+            return getCurrentQuest();
+        }
+    }
+
 }
 
 
