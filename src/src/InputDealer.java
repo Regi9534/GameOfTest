@@ -42,6 +42,9 @@ public class InputDealer {
                 case INVENTORY:
                     game.getPlayer().listInventory();
                     break;
+                case QUEST:
+
+                    break;
                 case HELP:
                     game.getCommand().printCommands();
                     break;

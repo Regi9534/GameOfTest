@@ -29,7 +29,6 @@ public class ConsoleEnviroment implements src.Interface.ConsoleEnviroment {
         while (true) {
             try {
                 Thread.sleep(10);
-
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -38,7 +37,5 @@ public class ConsoleEnviroment implements src.Interface.ConsoleEnviroment {
                 inputDealer.handleInput(result);
             }
         }
-
-
     }
 }
